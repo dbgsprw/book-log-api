@@ -7,8 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Builder
 @Value
@@ -20,7 +20,7 @@ public class Book {
     @NotNull
     String title;
 
-    @MappedCollection(idColumn = "BOOK_ISBN", keyColumn = "ID")
+    @MappedCollection(idColumn = "BOOK_ISBN", keyColumn = "NAME")
     @Builder.Default
-    List<BookAuthor> bookAuthors = new ArrayList<>();
+    Set<BookAuthor> bookAuthors = new HashSet<>();
 }

@@ -13,11 +13,8 @@
         </createTable>
 
         <createTable tableName="BOOK_AUTHOR">
-            <column name="ID" type="BIGINT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
             <column name="NAME" type="VARCHAR(36)">
-                <constraints nullable="false"/>
+                <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="BOOK_ISBN" type="BIGINT">
                 <constraints foreignKeyName="FK_BOOK_AUTHOR_BOOK_ID"
